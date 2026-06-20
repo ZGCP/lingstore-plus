@@ -275,7 +275,7 @@
         <div class="ranking-tabs">
             <button class="ranking-tab active" onclick="switchRanking('downloads')">下载量排行</button>
             <button class="ranking-tab" onclick="switchRanking('rating')">评分排行</button>
-            <button class="ranking-tab" onclick="switchRanking('views')">查看排行</button>
+            <button class="ranking-tab" onclick="switchRanking('size')">大小排行</button>
         </div>
         <div class="ranking-list" id="rankingList">
             <div class="loading">加载中...</div>
@@ -883,7 +883,7 @@
         function switchRanking(type) {
             currentRanking = type;
             document.querySelectorAll('.ranking-tab').forEach((tab, i) => {
-                const types = ['downloads', 'rating', 'views'];
+                const types = ['downloads', 'rating', 'size'];
                 tab.classList.toggle('active', types[i] === type);
             });
             renderRanking();
@@ -905,20 +905,26 @@
                 valueSuffix = '下载';
                 sorted.sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
             } else if (currentRanking === 'rating') {
-                valueField = 'ratingAvg';
+                valueField = 'rating';
                 valueSuffix = '分';
-                sorted.sort((a, b) => (b.ratingAvg || 0) - (a.ratingAvg || 0));
-            } else if (currentRanking === 'views') {
-                valueField = 'viewCount';
-                valueSuffix = '查看';
-                sorted.sort((a, b) => (b.viewCount || 0) - (a.viewCount || 0));
+                sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+            } else if (currentRanking === 'size') {
+                valueField = 'size';
+                valueSuffix = 'MB';
+                sorted.sort((a, b) => (b.size || 0) - (a.size || 0));
             }
 
             const top50 = sorted.slice(0, 50);
             container.innerHTML = top50.map((app, index) => {
                 const rank = index + 1;
                 const rankClass = rank <= 3 ? `top${rank}` : '';
-                const value = app[valueField] || 0;
+                let value = app[valueField] || 0;
+                let displayValue = formatNumber(value);
+                if (currentRanking === 'size') {
+                    // 大小排行需要转换为MB
+                    const sizeMB = value / 1024 / 1024;
+                    displayValue = sizeMB >= 1000 ? (sizeMB / 1024).toFixed(1) + ' GB' : sizeMB.toFixed(1) + ' MB';
+                }
                 return `
                     <div class="ranking-item" onclick="openAppDetail('${app._id}')">
                         <div class="ranking-number ${rankClass}">${rank}</div>
@@ -927,7 +933,7 @@
                             <div class="ranking-name">${app.name}</div>
                             <div class="ranking-developer">${app.developer || '未知开发者'}</div>
                         </div>
-                        <div class="ranking-value">${formatNumber(value)} ${valueSuffix}</div>
+                        <div class="ranking-value">${currentRanking === 'size' ? displayValue : displayValue + ' ' + valueSuffix}</div>
                     </div>
                 `;
             }).join('');
