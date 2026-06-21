@@ -1,7 +1,7 @@
 <!--
 ============================================================
     灵应用商店数据排行 - 第三方拓展版 (lingstore-plus)
-    Version: 1.20.0
+    Version: 1.21.1
     项目地址: https://github.com/TSZX-zg/lingstore-plus
     官方数据源: https://ziling.xin
     性质: 非官方 · 第三方拓展 · 仅供技术学习交流
@@ -252,6 +252,17 @@
         .ranking-name { font-size: 16px; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .ranking-developer { font-size: 12px; color: #888; }
         .ranking-value { font-size: 18px; font-weight: bold; color: #4fc3f7; flex-shrink: 0; }
+        
+        /* 用户排行榜 */
+        .user-ranking-item .ranking-icon { border-radius: 50%; }
+        .user-avatar { border-radius: 50%; object-fit: cover; }
+        .user-ranking-stats { display: flex; gap: 15px; margin-top: 5px; flex-wrap: wrap; }
+        .stat-item { display: flex; flex-direction: column; gap: 2px; }
+        .stat-label { font-size: 11px; color: #888; }
+        .stat-value { font-size: 14px; font-weight: bold; color: #fff; }
+        .stat-success { color: #4caf50; }
+        .stat-warning { color: #ff9800; }
+        .stat-danger { color: #f44336; }
         
         /* 捐赠榜 */
         .donation-section { padding: 40px; max-width: 800px; margin: 0 auto; }
@@ -700,9 +711,10 @@
     <div class="page" id="page-ranking">
         <div class="ranking-tabs">
             <button class="ranking-tab active" onclick="switchRanking('downloads')">下载量排行</button>
-            <button class="ranking-tab" onclick="switchRanking('uploads')">上传量排行</button>
             <button class="ranking-tab" onclick="switchRanking('rating')">评分排行</button>
             <button class="ranking-tab" onclick="switchRanking('size')">大小排行</button>
+            <button class="ranking-tab" onclick="switchRanking('user-uploads')">🏆 用户上传榜</button>
+            <button class="ranking-tab" onclick="switchRanking('user-reviews')">🛡️ 用户审核榜</button>
         </div>
         <div class="ranking-list" id="rankingList">
             <div class="loading">加载中...</div>
@@ -1062,7 +1074,7 @@
 
     <div class="footer">
         <p>数据来源: <a href="https://ziling.xin" target="_blank" style="color: #4fc3f7; text-decoration: none;">灵应用商店 ziling.xin</a> | 最后更新: <span id="lastUpdate">--</span></p>
-        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜等 | 版本: <strong style="color: #4fc3f7;">1.20.0</strong></p>
+        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜、用户排行榜等 | 版本: <strong style="color: #4fc3f7;">1.21.1</strong></p>
         <p style="margin-top:10px;font-size:12px;color:#666;">
             基于 <a href="https://github.com/TSZX-zg/lingstore" target="_blank" style="color:#888;text-decoration:none;">TSZX-zg/lingstore</a> 开源项目拓展开发 · 
             项目仓库: <a href="https://github.com/TSZX-zg/lingstore-plus" target="_blank" style="color:#4fc3f7;text-decoration:none;">lingstore-plus</a>
@@ -1184,6 +1196,10 @@
             });
             if (page === 'ranking') renderRanking();
             if (page === 'donation') loadDonations();
+            if (page === 'collections') loadCollections();
+            if (page === 'favorites') loadFavorites();
+            if (page === 'history') loadHistory();
+            if (page === 'downloads') loadDownloadHistory();
         }
 
         // 加载所有数据
@@ -1662,7 +1678,7 @@
         function switchRanking(type) {
             currentRanking = type;
             document.querySelectorAll('.ranking-tab').forEach((tab, i) => {
-                const types = ['downloads', 'uploads', 'rating', 'size'];
+                const types = ['downloads', 'rating', 'size', 'user-uploads', 'user-reviews'];
                 tab.classList.toggle('active', types[i] === type);
             });
             renderRanking();
@@ -1670,6 +1686,14 @@
 
         function renderRanking() {
             const container = document.getElementById('rankingList');
+            
+            // 用户排行榜
+            if (currentRanking === 'user-uploads' || currentRanking === 'user-reviews') {
+                loadUserRanking(currentRanking);
+                return;
+            }
+            
+            // 应用排行榜
             if (allApps.length === 0) {
                 container.innerHTML = '<div class="loading">加载中...</div>';
                 return;
@@ -1691,10 +1715,6 @@
                 valueField = 'size';
                 valueSuffix = 'MB';
                 sorted.sort((a, b) => (b.size || 0) - (a.size || 0));
-            } else if (currentRanking === 'uploads') {
-                valueField = 'uploadCount';
-                valueSuffix = '次上传';
-                sorted.sort((a, b) => (b.uploadCount || 0) - (a.uploadCount || 0));
             }
 
             const top50 = sorted.slice(0, 50);
@@ -1717,6 +1737,103 @@
                             <div class="ranking-developer">${app.developer || '未知开发者'}</div>
                         </div>
                         <div class="ranking-value">${currentRanking === 'size' ? displayValue : displayValue + ' ' + valueSuffix}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // 加载用户排行榜
+        let userRankingCache = { uploads: null, reviews: null };
+        
+        async function loadUserRanking(type) {
+            const container = document.getElementById('rankingList');
+            const cacheKey = type === 'user-uploads' ? 'uploads' : 'reviews';
+            
+            // 检查缓存
+            if (userRankingCache[cacheKey]) {
+                renderUserRanking(userRankingCache[cacheKey], type);
+                return;
+            }
+            
+            container.innerHTML = '<div class="loading">加载中...</div>';
+            
+            try {
+                const res = await apiFetch(`/leaderboards/${cacheKey}`);
+                const data = await res.json();
+                if (data.leaderboard) {
+                    userRankingCache[cacheKey] = data.leaderboard;
+                    renderUserRanking(data.leaderboard, type);
+                } else {
+                    container.innerHTML = '<div class="empty">加载失败</div>';
+                }
+            } catch (e) {
+                container.innerHTML = '<div class="empty">加载失败</div>';
+            }
+        }
+        
+        // 渲染用户排行榜
+        function renderUserRanking(list, type) {
+            const container = document.getElementById('rankingList');
+            
+            if (!list || list.length === 0) {
+                container.innerHTML = '<div class="empty">暂无数据</div>';
+                return;
+            }
+            
+            container.innerHTML = list.map((item, index) => {
+                const rank = item.rank || index + 1;
+                const rankClass = rank <= 3 ? `top${rank}` : '';
+                const user = item.uploader || item.reviewer;
+                const userAvatar = fixIconUrl(user.avatarUrl) || '';
+                const userName = user.nickname || user.username;
+                
+                let statsHtml = '';
+                if (type === 'user-uploads') {
+                    // 上传榜：总下载量、通过数量
+                    statsHtml = `
+                        <div class="user-ranking-stats">
+                            <span class="stat-item">
+                                <span class="stat-label">总下载</span>
+                                <span class="stat-value">${formatNumber(item.totalDownloads || 0)}</span>
+                            </span>
+                            <span class="stat-item">
+                                <span class="stat-label">通过</span>
+                                <span class="stat-value stat-success">${item.approvedCount || 0}</span>
+                            </span>
+                        </div>
+                    `;
+                } else {
+                    // 审核榜：审核总数、通过、拒绝、封禁
+                    statsHtml = `
+                        <div class="user-ranking-stats">
+                            <span class="stat-item">
+                                <span class="stat-label">总数</span>
+                                <span class="stat-value">${item.reviewCount || 0}</span>
+                            </span>
+                            <span class="stat-item">
+                                <span class="stat-label">通过</span>
+                                <span class="stat-value stat-success">${item.approvedCount || 0}</span>
+                            </span>
+                            <span class="stat-item">
+                                <span class="stat-label">拒绝</span>
+                                <span class="stat-value stat-warning">${item.rejectedCount || 0}</span>
+                            </span>
+                            <span class="stat-item">
+                                <span class="stat-label">封禁</span>
+                                <span class="stat-value stat-danger">${item.bannedCount || 0}</span>
+                            </span>
+                        </div>
+                    `;
+                }
+                
+                return `
+                    <div class="ranking-item user-ranking-item">
+                        <div class="ranking-number ${rankClass}">${rank}</div>
+                        <img class="ranking-icon user-avatar" src="${userAvatar}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23333%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2236%22>👤</text></svg>'">
+                        <div class="ranking-info">
+                            <div class="ranking-name">${userName}</div>
+                            ${statsHtml}
+                        </div>
                     </div>
                 `;
             }).join('');
@@ -2185,8 +2302,9 @@
             
             try {
                 const res = await apiFetch('/notifications');
-                if (res && res.items) {
-                    notifications = res.items;
+                const data = await res.json();
+                if (data && data.items) {
+                    notifications = data.items;
                     renderNotifications();
                     updateNotificationBadge();
                 }
@@ -2251,8 +2369,9 @@
         async function loadCollections() {
             try {
                 const res = await apiFetch('/collections');
-                if (res && res.success && res.collections) {
-                    collections = res.collections;
+                const data = await res.json();
+                if (data && data.success && data.collections) {
+                    collections = data.collections;
                     renderCollections();
                 }
             } catch(e) {
@@ -2288,15 +2407,16 @@
         async function openCollectionDetail(id) {
             try {
                 const res = await apiFetch(`/collections/${id}`);
-                if (res && res.success && res.collection) {
-                    currentCollection = res.collection;
-                    document.getElementById('collectionDetailTitle').textContent = res.collection.title || '未命名合集';
-                    document.getElementById('collectionDetailDesc').textContent = res.collection.description || '暂无描述';
-                    document.getElementById('collectionDetailCreator').textContent = res.collection.creator ? res.collection.creator.username : '官方';
-                    document.getElementById('collectionDetailCount').textContent = res.collection.apps ? res.collection.apps.length : 0;
+                const data = await res.json();
+                if (data && data.success && data.collection) {
+                    currentCollection = data.collection;
+                    document.getElementById('collectionDetailTitle').textContent = data.collection.title || '未命名合集';
+                    document.getElementById('collectionDetailDesc').textContent = data.collection.description || '暂无描述';
+                    document.getElementById('collectionDetailCreator').textContent = data.collection.creator ? data.collection.creator.username : '官方';
+                    document.getElementById('collectionDetailCount').textContent = data.collection.apps ? data.collection.apps.length : 0;
                     
                     // 渲染应用列表
-                    const apps = res.collection.apps || [];
+                    const apps = data.collection.apps || [];
                     const container = document.getElementById('collectionAppsContainer');
                     if (apps.length === 0) {
                         container.innerHTML = '<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">📦</div><div class="empty-text">合集为空</div></div>';
@@ -2523,7 +2643,8 @@
             
             try {
                 const res = await apiFetch('/favorites?limit=50');
-                if (res && res.favorites) {
+                const data = await res.json();
+                if (data && data.favorites) {
                     const favApps = res.favorites.map(f => f.app || f);
                     renderFavorites(favApps);
                 }
@@ -2555,8 +2676,9 @@
             
             try {
                 const res = await apiFetch('/history?limit=50');
-                if (res && res.history) {
-                    renderHistory(res.history);
+                const data = await res.json();
+                if (data && data.history) {
+                    renderHistory(data.history);
                 }
             } catch(e) {
                 document.getElementById('historyList').innerHTML = '<div class="empty-state"><div class="empty-icon">❌</div><div class="empty-text">加载失败</div></div>';
