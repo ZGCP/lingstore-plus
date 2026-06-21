@@ -1,3 +1,12 @@
+<!--
+============================================================
+    灵应用商店数据排行 - 第三方拓展版 (lingstore-plus)
+    Version: v19
+    项目地址: https://github.com/TSZX-zg/lingstore-plus
+    官方数据源: https://ziling.xin
+    性质: 非官方 · 第三方拓展 · 仅供技术学习交流
+============================================================
+-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -83,6 +92,36 @@
         .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
         .footer a { color: #888; text-decoration: none; }
         .footer a:hover { color: #4fc3f7; }
+
+        /* 页面水印 */
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 150px,
+                rgba(255,255,255,0.5) 150px,
+                rgba(255,255,255,0.5) 300px
+            );
+        }
+        .watermark::before {
+            content: "LingStore Plus · github.com/TSZX-zg/lingstore-plus";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff;
+            white-space: nowrap;
+        }
         
         .cache-badge { font-size: 11px; background: #4fc3f7; color: #1a1a2e; padding: 2px 8px; border-radius: 10px; margin-left: 10px; }
         .cache-badge.api { background: #ff6b6b; color: #fff; }
@@ -375,6 +414,10 @@
 
     <!-- 首页 -->
     <div class="page active" id="page-home">
+        <!-- 非官方声明提示条 -->
+        <div style="background: rgba(79, 195, 247, 0.1); border: 1px solid rgba(79, 195, 247, 0.3); border-radius: 12px; padding: 15px 20px; margin: 20px auto; max-width: 1200px; text-align: center; font-size: 14px; color: #aaa;">
+            ⚠️ <strong>第三方拓展版 · 非官方</strong> · 数据来源：<a href="https://ziling.xin" target="_blank" style="color: #4fc3f7; text-decoration: none;">ziling.xin</a> · 仅供技术学习与交流
+        </div>
         <div class="stats-section">
             <div class="stats">
                 <div class="stat-item">
@@ -513,14 +556,10 @@
             <div class="api-category">
                 <h3>🔒 需要登录的接口</h3>
                 <div id="loginApiStatus">
-                    ${isLoggedIn() ? `
-                    <div class="form-success" style="margin-bottom:20px;">✅ 已登录，可以调用以下接口</div>
-                    ` : `
                     <div class="login-required" style="margin-bottom:20px;">
                         <p>🔒 登录后可真实调用以下接口</p>
                         <button class="login-required-btn" onclick="openLoginModal()">立即登录</button>
                     </div>
-                    `}
                 </div>
                 <div class="api-list">
                     <div class="api-item">
@@ -579,7 +618,7 @@
             <div class="detail-section">
                 <h3>第一条 网站性质与定位</h3>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
-                    1. <strong>非官方独立性声明</strong>：本站系由个人开发者独立维护的开源技术演示项目，为灵应用商店的第三方拓展工具，与灵应用商店官方团队无任何隶属、合作或关联关系。所有内容仅作技术交流与学习研究之用，不构成任何商业建议。
+                    1. <strong>非官方独立性声明</strong>：本站系由个人开发者独立维护的开源技术演示项目，为灵应用商店的<strong>第三方拓展版</strong>，与灵应用商店官方团队（ziling.xin）无任何隶属、合作或关联关系。本站不冒充官方身份，不构成任何"官方分支"，所有内容仅作技术交流与学习研究之用，不构成任何商业建议。
                 </p>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
                     2. <strong>技术拓展工具定位</strong>：本站旨在提供更丰富的应用浏览、搜索、排序等拓展功能，优化用户体验。本站不托管、不镜像、不篡改任何应用文件，所有应用内容及版权归原作者所有。
@@ -592,19 +631,19 @@
             <div class="detail-section">
                 <h3>第二条 数据来源与缓存机制</h3>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
-                    1. <strong>数据来源合法性</strong>：所有应用元数据均来自灵应用商店官方公开API。本站通过自动化脚本定期抓取缓存，采集行为严格遵守robots.txt协议及相关法律法规。
+                    1. <strong>数据来源合法性</strong>：所有应用元数据均来自灵应用商店官方公开API（ziling.xin）。本站仅缓存公开元数据用于展示，所有下载链接及实时数据最终指向 ziling.xin 官方域名。
                 </p>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
-                    2. <strong>缓存机制与更新频率</strong>：本站采用GitHub Actions自动化定时任务实施数据缓存策略。应用列表数据每日更新5次（北京时间00:00、06:00、12:00、18:00、22:00），理论最大时延约6小时；应用详情数据采用90天滚动更新周期，每日分散更新部分应用详情，理论最大时延约90天。
+                    2. <strong>缓存机制与更新频率</strong>：本站采用GitHub Actions自动化定时任务实施数据缓存策略。应用列表数据每日更新5次（北京时间00:00、06:00、12:00、18:00、22:00），理论最大时延约6小时；应用详情数据采用90天滚动更新周期，每日分散更新部分应用详情，理论最大时延约90天。此缓存频率已与官方沟通确认合理。
                 </p>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
-                    3. <strong>实时API请求</strong>：为保障功能完整性，部分功能（如登录后操作、应用详情、下载等）将实时请求官方API。该等请求由用户的浏览器或代理服务直接转发至官方服务器。
+                    3. <strong>实时API请求限制</strong>：为保障功能完整性，部分功能（如登录后操作、应用详情、下载等）将实时请求官方API。该等请求由用户的浏览器或代理服务直接转发至官方服务器。本站前端不进行无脑轮询，缓存有效期（TTL）设置在1小时以上，避免给源站造成不必要的压力。
                 </p>
                 <p style="color:#ccc;line-height:1.8;margin-bottom:15px;">
                     4. <strong>降级容错机制</strong>：当缓存数据不可用时，前端将自动降级为实时API调用模式，确保基础功能可用。降级模式下将增加API请求次数，可能影响加载速度。
                 </p>
                 <p style="color:#ccc;line-height:1.8;">
-                    5. <strong>数据准确性豁免</strong>：本站对数据的准确性、完整性、及时性不作任何明示或暗示的担保，所有数据仅供参考，请以官方渠道为准。
+                    5. <strong>数据准确性豁免</strong>：本站对数据的准确性、完整性、及时性不作任何明示或暗示的担保，所有数据仅供参考，请以 <a href="https://ziling.xin" target="_blank" style="color: #4fc3f7;">ziling.xin 官方渠道</a> 为准。
                 </p>
             </div>
 
@@ -736,11 +775,17 @@
     </div>
 
     <!-- 页脚 -->
+    <!-- 页面水印 -->
+    <div class="watermark"></div>
+
     <div class="footer">
-        <p>数据来源: 灵应用商店 ziling.xin | 最后更新: <span id="lastUpdate">--</span></p>
-        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜等</p>
-        <p style="margin-top:10px;font-size:12px;color:#666;">基于 <a href="https://github.com/TSZX-zg/lingstore" target="_blank" style="color:#888;text-decoration:none;">TSZX-zg/lingstore</a> 开源项目拓展开发</p>
-        <p style="margin-top:10px;font-size:12px;">© 2026 LingStore Plus · 仅供技术演示 · <a href="javascript:switchPage('legal')" style="color:#888;text-decoration:none;">法律声明</a></p>
+        <p>数据来源: <a href="https://ziling.xin" target="_blank" style="color: #4fc3f7; text-decoration: none;">灵应用商店 ziling.xin</a> | 最后更新: <span id="lastUpdate">--</span></p>
+        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜等 | 版本: <strong style="color: #4fc3f7;">v19</strong></p>
+        <p style="margin-top:10px;font-size:12px;color:#666;">
+            基于 <a href="https://github.com/TSZX-zg/lingstore" target="_blank" style="color:#888;text-decoration:none;">TSZX-zg/lingstore</a> 开源项目拓展开发 · 
+            项目仓库: <a href="https://github.com/TSZX-zg/lingstore-plus" target="_blank" style="color:#4fc3f7;text-decoration:none;">lingstore-plus</a>
+        </p>
+        <p style="margin-top:10px;font-size:12px;">© 2026 LingStore Plus · 非官方第三方拓展版 · 仅供技术演示 · <a href="javascript:switchPage('legal')" style="color:#888;text-decoration:none;">法律声明</a></p>
     </div>
 
     <script>
@@ -749,7 +794,11 @@
         // 修复图标URL：将HTTP+443端口转换为标准HTTPS
         function fixIconUrl(url) {
             if (!url) return '';
-            return url.replace('http://market.ziling.xin:443', 'https://market.ziling.xin');
+            // 1. 先处理 http://xxx:443 这种错误格式
+            let fixed = url.replace('http://market.ziling.xin:443', 'https://market.ziling.xin');
+            // 2. 去掉所有端口号（3000、8000等），用默认端口
+            fixed = fixed.replace(/:\/\/([^/:]+):\d+\//, '://$1/');
+            return fixed;
         }
         
         let allApps = [];
@@ -1412,6 +1461,7 @@
         function updateUserUI() {
             const loginSection = document.getElementById('loginSection');
             const userSection = document.getElementById('userSection');
+            const loginApiStatus = document.getElementById('loginApiStatus');
             const user = getCurrentUser();
             
             if (isLoggedIn() && user) {
@@ -1419,9 +1469,22 @@
                 userSection.style.display = 'block';
                 document.getElementById('userName').textContent = user.nickname || user.username || '用户';
                 document.getElementById('userAvatar').textContent = (user.nickname || user.username || 'U')[0].toUpperCase();
+                // 更新API演示页的登录状态
+                if (loginApiStatus) {
+                    loginApiStatus.innerHTML = '<div class="form-success" style="margin-bottom:20px;">✅ 已登录，可以调用以下接口</div>';
+                }
             } else {
                 loginSection.style.display = 'block';
                 userSection.style.display = 'none';
+                // 更新API演示页的登录状态
+                if (loginApiStatus) {
+                    loginApiStatus.innerHTML = `
+                        <div class="login-required" style="margin-bottom:20px;">
+                            <p>🔒 登录后可真实调用以下接口</p>
+                            <button class="login-required-btn" onclick="openLoginModal()">立即登录</button>
+                        </div>
+                    `;
+                }
             }
         }
 
