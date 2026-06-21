@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-06-20T13:36:47.404Z",
-  "totalApps": 746,
-  "detailCount": 9,
-  "cycleDay": 80,
+  "updatedAt": "2026-06-21T19:09:18.990Z",
+  "totalApps": 749,
+  "detailCount": 15,
+  "cycleDay": 81,
   "apps": {
     "69da022e3fc1e71efb60f91b": {
       "_id": "69da022e3fc1e71efb60f91b",
@@ -513,8 +513,8 @@
         "nickname": "要你妹",
         "avatarUrl": ""
       },
-      "downloads": 43,
-      "viewCount": 110,
+      "downloads": 45,
+      "viewCount": 114,
       "ratingAvg": 0,
       "ratingCount": 0,
       "status": "approved",
@@ -531,7 +531,7 @@
           "versionCode": 290,
           "versionName": "1.26.4",
           "uploadedAt": "2026-04-10T08:54:00.680Z",
-          "downloads": 38,
+          "downloads": 40,
           "changelog": ""
         },
         {
@@ -556,7 +556,7 @@
           "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.clover.daysmatter/69d8baa8cedefbbdbc07fa94-290.png",
           "size": 37872799,
           "apkSize": 37872799,
-          "downloads": 43,
+          "downloads": 45,
           "createdAt": "2026-04-10T08:54:00.679Z"
         }
       ]
@@ -597,8 +597,8 @@
         "nickname": "灵",
         "avatarUrl": ""
       },
-      "downloads": 118,
-      "viewCount": 561,
+      "downloads": 119,
+      "viewCount": 571,
       "ratingAvg": 0,
       "ratingCount": 0,
       "status": "approved",
@@ -615,7 +615,7 @@
           "versionCode": 6,
           "versionName": "230929",
           "uploadedAt": "2026-04-10T08:36:35.862Z",
-          "downloads": 118,
+          "downloads": 119,
           "changelog": ""
         }
       ],
@@ -632,7 +632,7 @@
           "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.novel.xiayu/bf2b8fc5f0d1cebd-6.png",
           "size": 4146359,
           "apkSize": 4146359,
-          "downloads": 118,
+          "downloads": 119,
           "createdAt": "2026-04-10T08:36:35.861Z"
         }
       ]
@@ -677,8 +677,8 @@
         "nickname": "拾三yu",
         "avatarUrl": ""
       },
-      "downloads": 71,
-      "viewCount": 277,
+      "downloads": 75,
+      "viewCount": 286,
       "ratingAvg": 5,
       "ratingCount": 1,
       "status": "approved",
@@ -695,7 +695,7 @@
           "versionCode": 191,
           "versionName": "1.8.3",
           "uploadedAt": "2026-04-10T08:23:14.307Z",
-          "downloads": 71,
+          "downloads": 75,
           "changelog": ""
         }
       ],
@@ -712,7 +712,7 @@
           "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.deepseek.chau/b677baf8cb38a989-191.png",
           "size": 17598028,
           "apkSize": 17598028,
-          "downloads": 71,
+          "downloads": 75,
           "createdAt": "2026-04-10T08:23:14.306Z"
         },
         {
@@ -727,8 +727,495 @@
           "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.deepseek.chau/ee2bd813ac8671c2-191.png",
           "size": 16854486,
           "apkSize": 16854486,
-          "downloads": 151,
+          "downloads": 157,
           "createdAt": "2026-06-01T15:23:05.641Z"
+        }
+      ]
+    },
+    "69d88c87cedefbbdbc07a6e8": {
+      "_id": "69d88c87cedefbbdbc07a6e8",
+      "packageName": "com.hankmi.calendar",
+      "variantKey": "default",
+      "versionCode": 1,
+      "versionName": "21.12.22",
+      "minSdk": 23,
+      "targetSdk": 29,
+      "architectures": [],
+      "name": "抬腕日历",
+      "category": "Tools",
+      "tags": [],
+      "description": "由hankmi开发的日记软件，不太适合圆屏设备",
+      "developer": "hankmi",
+      "source": "小桃应用商店",
+      "supportedDevices": [
+        "phone"
+      ],
+      "isWearOS": false,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/96e2a590-cf26-4d07-8080-94a5525a1e1b.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d88c87cedefbbdbc07a6e8",
+      "size": 110981,
+      "apkSize": 110981,
+      "uploader": {
+        "_id": "69d6642425674e3066734d64",
+        "username": "helloworld",
+        "nickname": "helloworld",
+        "avatarUrl": ""
+      },
+      "downloads": 39,
+      "viewCount": 109,
+      "ratingAvg": 5,
+      "ratingCount": 1,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-06-08T01:40:52.679Z",
+      "createdAt": "2026-04-10T05:37:11.563Z",
+      "updatedAt": "2026-06-08T01:40:52.679Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+      "logoKey": "apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+      "versions": [
+        {
+          "_id": "69d88c87cedefbbdbc07a6ea",
+          "versionCode": 1,
+          "versionName": "21.12.22",
+          "uploadedAt": "2026-04-10T05:37:11.564Z",
+          "downloads": 39,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d88c87cedefbbdbc07a6e8",
+          "name": "抬腕日历",
+          "packageName": "com.hankmi.calendar",
+          "variantKey": "default",
+          "versionCode": 1,
+          "versionName": "21.12.22",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.hankmi.calendar/5af3e9f596d9ab75-1.png",
+          "size": 110981,
+          "apkSize": 110981,
+          "downloads": 39,
+          "createdAt": "2026-04-10T05:37:11.563Z"
+        }
+      ]
+    },
+    "69d88905cedefbbdbc07a157": {
+      "_id": "69d88905cedefbbdbc07a157",
+      "packageName": "com.omarea.vtools",
+      "variantKey": "default",
+      "versionCode": 920260406,
+      "versionName": "9.2.11",
+      "minSdk": 23,
+      "targetSdk": 30,
+      "architectures": [
+        "arm64-v8a"
+      ],
+      "name": "Scene",
+      "category": "System",
+      "tags": [
+        "root"
+      ],
+      "description": "安卓手机管理软件",
+      "source": "scene",
+      "supportedDevices": [
+        "watch"
+      ],
+      "isWearOS": true,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/a99aea61-5eda-4ee8-87c9-9d8c13093035.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d88905cedefbbdbc07a157",
+      "size": 7553944,
+      "apkSize": 7553944,
+      "uploader": {
+        "_id": "69d6191f79d2fd584688d350",
+        "username": "admin",
+        "nickname": "AzumaChiaki",
+        "avatarUrl": ""
+      },
+      "downloads": 31,
+      "viewCount": 193,
+      "ratingAvg": 3,
+      "ratingCount": 1,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-04-22T03:06:35.499Z",
+      "createdAt": "2026-04-10T05:22:13.583Z",
+      "updatedAt": "2026-04-22T03:06:35.499Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+      "logoKey": "apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+      "versions": [
+        {
+          "_id": "69d88905cedefbbdbc07a159",
+          "versionCode": 920260406,
+          "versionName": "9.2.11",
+          "uploadedAt": "2026-04-10T05:22:13.584Z",
+          "downloads": 28,
+          "changelog": ""
+        },
+        {
+          "_id": "69de23ab323db2fd87c3ba2f",
+          "versionCode": 620230729,
+          "versionName": "6.3.11 final",
+          "uploadedAt": "2026-04-14T11:23:23.380Z",
+          "downloads": 3,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d88905cedefbbdbc07a157",
+          "name": "Scene",
+          "packageName": "com.omarea.vtools",
+          "variantKey": "default",
+          "versionCode": 920260406,
+          "versionName": "9.2.11",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.omarea.vtools/177adc9d91f86765-920260406.png",
+          "size": 7553944,
+          "apkSize": 7553944,
+          "downloads": 31,
+          "createdAt": "2026-04-10T05:22:13.583Z"
+        }
+      ]
+    },
+    "69d88867cedefbbdbc079f09": {
+      "_id": "69d88867cedefbbdbc079f09",
+      "packageName": "com.hankmi.bili",
+      "variantKey": "default",
+      "versionCode": 5,
+      "versionName": "1.5",
+      "minSdk": 19,
+      "targetSdk": 28,
+      "architectures": [],
+      "name": "抬腕哔哩",
+      "category": "Media",
+      "tags": [
+        "哔哩哔哩"
+      ],
+      "description": "在手表上可以轻松收看hankmi最新视频的软件。\n\n我十分不推荐用这个观看，可以用哔哩终端等其他软件代替",
+      "developer": "hankmi",
+      "source": "安卓手表adb工具箱/小桃应用商店",
+      "supportedDevices": [
+        "phone"
+      ],
+      "isWearOS": false,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/55127740-239d-4fa1-b3c8-011abd34bc46.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d88867cedefbbdbc079f09",
+      "size": 493804,
+      "apkSize": 493804,
+      "uploader": {
+        "_id": "69d6642425674e3066734d64",
+        "username": "helloworld",
+        "nickname": "helloworld",
+        "avatarUrl": ""
+      },
+      "downloads": 92,
+      "viewCount": 940,
+      "ratingAvg": 3.7,
+      "ratingCount": 3,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-04-23T00:58:00.496Z",
+      "createdAt": "2026-04-10T05:19:35.015Z",
+      "updatedAt": "2026-04-23T00:58:00.496Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+      "logoKey": "apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+      "versions": [
+        {
+          "_id": "69d88867cedefbbdbc079f0b",
+          "versionCode": 5,
+          "versionName": "1.5",
+          "uploadedAt": "2026-04-10T05:19:35.016Z",
+          "downloads": 88,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d88867cedefbbdbc079f09",
+          "name": "抬腕哔哩",
+          "packageName": "com.hankmi.bili",
+          "variantKey": "default",
+          "versionCode": 5,
+          "versionName": "1.5",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.hankmi.bili/f2d3df94d57347ef-5.png",
+          "size": 493804,
+          "apkSize": 493804,
+          "downloads": 92,
+          "createdAt": "2026-04-10T05:19:35.015Z"
+        }
+      ]
+    },
+    "69d88864cedefbbdbc079ef9": {
+      "_id": "69d88864cedefbbdbc079ef9",
+      "packageName": "com.testunstallapp.ck",
+      "variantKey": "default",
+      "versionCode": 3,
+      "versionName": "1.2",
+      "minSdk": 8,
+      "targetSdk": 17,
+      "architectures": [
+        "armeabi"
+      ],
+      "name": "mini软件卸载",
+      "category": "Tools",
+      "tags": [
+        "卸载，watch"
+      ],
+      "description": "可以点击软件后选择应用专门卸载 对OPPOwatch/wearOS设备十分友好",
+      "developer": "未知",
+      "source": "小桃应用商店",
+      "supportedDevices": [
+        "phone"
+      ],
+      "isWearOS": false,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/2ab52665-f789-47ce-baf3-018a1da475d6.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d88864cedefbbdbc079ef9",
+      "size": 617834,
+      "apkSize": 617834,
+      "uploader": {
+        "_id": "69d6642425674e3066734d64",
+        "username": "helloworld",
+        "nickname": "helloworld",
+        "avatarUrl": ""
+      },
+      "downloads": 16,
+      "viewCount": 60,
+      "ratingAvg": 0,
+      "ratingCount": 0,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-04-10T11:40:17.033Z",
+      "createdAt": "2026-04-10T05:19:32.820Z",
+      "updatedAt": "2026-04-10T11:40:17.033Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+      "logoKey": "apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+      "versions": [
+        {
+          "_id": "69d88864cedefbbdbc079efb",
+          "versionCode": 3,
+          "versionName": "1.2",
+          "uploadedAt": "2026-04-10T05:19:32.821Z",
+          "downloads": 16,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d88864cedefbbdbc079ef9",
+          "name": "mini软件卸载",
+          "packageName": "com.testunstallapp.ck",
+          "variantKey": "default",
+          "versionCode": 3,
+          "versionName": "1.2",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.testunstallapp.ck/ca1ebff2bd65a427-3.png",
+          "size": 617834,
+          "apkSize": 617834,
+          "downloads": 16,
+          "createdAt": "2026-04-10T05:19:32.820Z"
+        }
+      ]
+    },
+    "69d875012c0594e9261ee6d3": {
+      "_id": "69d875012c0594e9261ee6d3",
+      "packageName": "com.yao.dw.devsettings",
+      "variantKey": "default",
+      "versionCode": 1,
+      "versionName": "1.0",
+      "minSdk": 21,
+      "targetSdk": 27,
+      "architectures": [],
+      "name": "华强北开发者（仅限华强北手表）",
+      "category": "Tools",
+      "tags": [],
+      "description": "一款调用华强北手表开发者选项的应用",
+      "developer": "Bugjump",
+      "source": "微思",
+      "supportedDevices": [
+        "phone",
+        "watch"
+      ],
+      "isWearOS": false,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/90942235-d45b-488e-9c0d-26dcf2809429.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d875012c0594e9261ee6d3",
+      "size": 17396,
+      "apkSize": 17396,
+      "uploader": {
+        "_id": "69d66cd825674e3066735666",
+        "username": "shisan",
+        "nickname": "拾三yu",
+        "avatarUrl": ""
+      },
+      "downloads": 26,
+      "viewCount": 101,
+      "ratingAvg": 0,
+      "ratingCount": 0,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-04-10T06:16:24.054Z",
+      "createdAt": "2026-04-10T03:56:49.831Z",
+      "updatedAt": "2026-04-10T06:16:24.054Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+      "logoKey": "apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+      "versions": [
+        {
+          "_id": "69d875012c0594e9261ee6d5",
+          "versionCode": 1,
+          "versionName": "1.0",
+          "uploadedAt": "2026-04-10T03:56:49.832Z",
+          "downloads": 25,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d875012c0594e9261ee6d3",
+          "name": "华强北开发者（仅限华强北手表）",
+          "packageName": "com.yao.dw.devsettings",
+          "variantKey": "default",
+          "versionCode": 1,
+          "versionName": "1.0",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/com.yao.dw.devsettings/4116630d71515e9f-1.png",
+          "size": 17396,
+          "apkSize": 17396,
+          "downloads": 26,
+          "createdAt": "2026-04-10T03:56:49.831Z"
+        }
+      ]
+    },
+    "69d874ff2c0594e9261ee6c0": {
+      "_id": "69d874ff2c0594e9261ee6c0",
+      "packageName": "ginlemon.flowerfree",
+      "variantKey": "default",
+      "versionCode": 650330,
+      "versionName": "6.5 build 033",
+      "minSdk": 24,
+      "targetSdk": 35,
+      "architectures": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ],
+      "name": "Smart Launcher",
+      "category": "Customization",
+      "tags": [],
+      "description": "这是一款简约美观的启动器",
+      "developer": "smart launcher team",
+      "source": "sine",
+      "supportedDevices": [
+        "phone"
+      ],
+      "isWearOS": false,
+      "isApks": false,
+      "supportedLanguages": [],
+      "supportedDensities": [],
+      "iconKey": "apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+      "iconSource": "parsed",
+      "apkKey": "APK/53522ef7-c309-4706-9a72-f1909c2ca990.apk",
+      "screenshotKeys": [],
+      "downloadLines": [],
+      "downloadUrl": "/download/69d874ff2c0594e9261ee6c0",
+      "size": 22470976,
+      "apkSize": 22470976,
+      "uploader": {
+        "_id": "69d66cd825674e3066735666",
+        "username": "shisan",
+        "nickname": "拾三yu",
+        "avatarUrl": ""
+      },
+      "downloads": 48,
+      "viewCount": 290,
+      "ratingAvg": 5,
+      "ratingCount": 3,
+      "status": "approved",
+      "auditLog": [],
+      "lastVersionUpdateAt": "2026-04-14T08:24:15.486Z",
+      "createdAt": "2026-04-10T03:56:47.412Z",
+      "updatedAt": "2026-04-14T08:24:15.486Z",
+      "iconUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+      "logoKey": "apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+      "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+      "versions": [
+        {
+          "_id": "69d874ff2c0594e9261ee6c2",
+          "versionCode": 650330,
+          "versionName": "6.5 build 033",
+          "uploadedAt": "2026-04-10T03:56:47.416Z",
+          "downloads": 47,
+          "changelog": ""
+        },
+        {
+          "_id": "69de23e4323db2fd87c3bca4",
+          "versionCode": 640100,
+          "versionName": "6.4 build 010",
+          "uploadedAt": "2026-04-14T11:24:20.733Z",
+          "downloads": 1,
+          "changelog": ""
+        }
+      ],
+      "variants": [
+        {
+          "_id": "69d874ff2c0594e9261ee6c0",
+          "name": "Smart Launcher",
+          "packageName": "ginlemon.flowerfree",
+          "variantKey": "default",
+          "versionCode": 650330,
+          "versionName": "6.5 build 033",
+          "status": "approved",
+          "iconKey": "apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+          "iconUrl": "http://market.ziling.xin:443/download/icon/apk-logos-v2/ginlemon.flowerfree/626a9270bc93b6a3-650330.png",
+          "size": 22470976,
+          "apkSize": 22470976,
+          "downloads": 48,
+          "createdAt": "2026-04-10T03:56:47.412Z"
         }
       ]
     }
