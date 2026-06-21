@@ -1623,61 +1623,25 @@
             btn.textContent = '发表评论';
         }
 
-        // 处理下载
-        async function handleDownload(appId, appName) {
+        // 处理下载（走代理 + 浏览器原生下载）
+        function handleDownload(appId, appName) {
             if (!isLoggedIn()) {
                 openLoginModal();
                 return;
             }
             
             const token = getToken();
-            const downloadUrl = `https://market.ziling.xin/download/${appId}`;
-            const btn = event?.target?.closest('button');
-            const originalText = btn ? btn.innerHTML : '';
+            // 把Token放在URL参数里，走代理，用浏览器原生下载
+            const downloadUrl = `https://api.tszxzy.dpdns.org/download/${appId}?token=${encodeURIComponent(token)}`;
             
-            try {
-                // 显示加载状态
-                if (btn) {
-                    btn.innerHTML = '⏳ 下载中...';
-                    btn.disabled = true;
-                }
-                
-                // 直接请求官方接口，自动跟随重定向
-                const res = await fetch(downloadUrl, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    },
-                    redirect: 'follow'
-                });
-                
-                if (res.ok) {
-                    const blob = await res.blob();
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = (appName || 'app') + '.apk';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    window.URL.revokeObjectURL(url);
-                } else {
-                    let errMsg = '下载失败';
-                    try {
-                        const err = await res.json();
-                        errMsg = err.message || errMsg;
-                    } catch(e) {}
-                    alert(errMsg);
-                }
-                
-            } catch (e) {
-                alert('下载失败：' + e.message + '\n\n提示：如果是跨域或混合内容错误，请使用灵应用商店APP下载');
-            } finally {
-                // 恢复按钮状态
-                if (btn) {
-                    btn.innerHTML = originalText || '📥 下载应用';
-                    btn.disabled = false;
-                }
-            }
+            // 用a标签触发下载，浏览器会自动处理重定向
+            const a = document.createElement('a');
+            a.href = downloadUrl;
+            a.download = (appName || 'app') + '.apk';
+            a.target = '_blank';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
 
         // 加载版本列表
