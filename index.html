@@ -6,7 +6,10 @@
     <title>灵应用商店数据排行 - 第三方拓展版</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; }
+        * { box-sizing: border-box; max-width: 100%; }
+        html, body { width: 100%; overflow-x: hidden; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #fff; -webkit-text-size-adjust: 100%; }
+        img { max-width: 100%; height: auto; }
         
         /* 导航栏 */
         .navbar { background: rgba(22, 33, 62, 0.95); padding: 15px 40px; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; }
@@ -242,13 +245,93 @@
         .tech-tag { background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 20px; font-size: 13px; }
         
         @media (max-width: 768px) {
-            .navbar { padding: 15px; flex-direction: column; gap: 15px; }
+            .navbar { padding: 12px 15px; flex-direction: column; gap: 12px; }
+            .navbar-brand { font-size: 16px; }
+            .navbar-brand img { height: 30px; }
             .nav-search { width: 100%; max-width: none; margin: 0; }
-            .nav-links { width: 100%; overflow-x: auto; }
+            .nav-links { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .nav-link { padding: 8px 14px; font-size: 13px; white-space: nowrap; }
+            
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .stat-value { font-size: 20px; }
+            .stat-label { font-size: 11px; }
+            
+            .section-title { font-size: 16px; padding-left: 15px; padding-right: 15px; }
+            
             .stats-section, .controls, .container, .category-nav, .ranking-tabs, .ranking-list, .donation-section, .api-section { padding-left: 15px; padding-right: 15px; }
-            .container { grid-template-columns: 1fr; }
-            .detail-header { flex-direction: column; align-items: center; text-align: center; }
-            .detail-stats { justify-content: center; }
+            
+            .container { grid-template-columns: 1fr; gap: 12px; padding-top: 15px; padding-bottom: 15px; }
+            .container.list-view { padding: 10px 15px; gap: 8px; }
+            .container.list-view .app-card { padding: 12px 15px; gap: 12px; }
+            .container.list-view .app-icon { width: 44px; height: 44px; }
+            .container.list-view .downloads { width: auto; font-size: 12px; }
+            
+            .app-card { padding: 15px; }
+            .app-icon { width: 56px; height: 56px; }
+            .app-info h3 { font-size: 14px; }
+            .app-meta { gap: 6px; }
+            .meta-item { padding: 2px 6px; font-size: 10px; }
+            
+            .category-nav { gap: 8px; padding-bottom: 10px; }
+            .category-tag { padding: 6px 14px; font-size: 12px; }
+            
+            .controls { flex-direction: column; gap: 10px; align-items: stretch; }
+            .control-group { flex-wrap: wrap; gap: 8px; }
+            .control-btn { padding: 8px 14px; font-size: 12px; }
+            
+            /* 弹窗移动端优化 */
+            .modal-overlay { padding: 10px; align-items: flex-start; padding-top: 20px; }
+            .modal { max-width: 100%; max-height: 92vh; border-radius: 16px; }
+            .modal-header { padding: 15px 20px; }
+            .modal-body { padding: 20px; }
+            .modal-close { width: 32px; height: 32px; font-size: 16px; }
+            
+            .detail-header { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+            .detail-icon { width: 72px; height: 72px; }
+            .detail-title { font-size: 18px; }
+            .detail-stats { justify-content: center; gap: 15px; }
+            .detail-stat-value { font-size: 16px; }
+            .detail-stat-label { font-size: 11px; }
+            
+            .detail-section h3 { font-size: 15px; margin-bottom: 10px; }
+            .detail-info-grid { grid-template-columns: 1fr; gap: 8px; }
+            .info-item { font-size: 12px; padding: 8px 12px; }
+            
+            .variant-card { padding: 10px 12px; }
+            .variant-name { font-size: 13px; }
+            .variant-size { font-size: 11px; }
+            
+            .comment-item { padding: 12px 0; gap: 10px; }
+            .comment-avatar { width: 28px; height: 28px; }
+            .comment-content { font-size: 13px; }
+            .comment-meta { font-size: 11px; }
+            
+            .login-modal { max-width: 100%; margin: 20px; }
+            .submit-btn { padding: 12px; font-size: 14px; }
+            
+            .donation-section, .api-section { padding-top: 20px; padding-bottom: 20px; }
+            .donation-item { padding: 12px 15px; gap: 12px; }
+            .donation-avatar { width: 40px; height: 40px; }
+            .donation-rank { width: 30px; height: 30px; font-size: 13px; }
+            
+            .api-endpoint { padding: 12px 15px; }
+            .api-method { font-size: 10px; padding: 2px 6px; }
+            .api-path { font-size: 12px; }
+            
+            /* 确保文字不溢出 */
+            .app-name, .detail-title, .comment-author, .variant-name {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .stat-value { font-size: 18px; }
+            .app-card { padding: 12px; }
+            .app-icon { width: 48px; height: 48px; }
+            .modal-body { padding: 15px; }
+            .detail-icon { width: 64px; height: 64px; }
         }
     </style>
 </head>
