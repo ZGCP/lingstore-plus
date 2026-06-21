@@ -1,7 +1,7 @@
 <!--
 ============================================================
     灵应用商店数据排行 - 第三方拓展版 (lingstore-plus)
-    Version: 1.21.1
+    Version: 1.22.0
     项目地址: https://github.com/TSZX-zg/lingstore-plus
     官方数据源: https://ziling.xin
     性质: 非官方 · 第三方拓展 · 仅供技术学习交流
@@ -257,12 +257,12 @@
         .user-ranking-item .ranking-icon { border-radius: 50%; }
         .user-avatar { border-radius: 50%; object-fit: cover; }
         .user-ranking-stats { display: flex; gap: 15px; margin-top: 5px; flex-wrap: wrap; }
-        .stat-item { display: flex; flex-direction: column; gap: 2px; }
-        .stat-label { font-size: 11px; color: #888; }
-        .stat-value { font-size: 14px; font-weight: bold; color: #fff; }
-        .stat-success { color: #4caf50; }
-        .stat-warning { color: #ff9800; }
-        .stat-danger { color: #f44336; }
+        .user-ranking-stats .stat-item { display: flex; flex-direction: column; gap: 2px; }
+        .user-ranking-stats .stat-label { font-size: 11px; color: #888; }
+        .user-ranking-stats .stat-value { font-size: 14px; font-weight: bold; color: #fff; }
+        .user-ranking-stats .stat-success { color: #4caf50; }
+        .user-ranking-stats .stat-warning { color: #ff9800; }
+        .user-ranking-stats .stat-danger { color: #f44336; }
         
         /* 捐赠榜 */
         .donation-section { padding: 40px; max-width: 800px; margin: 0 auto; }
@@ -1074,7 +1074,7 @@
 
     <div class="footer">
         <p>数据来源: <a href="https://ziling.xin" target="_blank" style="color: #4fc3f7; text-decoration: none;">灵应用商店 ziling.xin</a> | 最后更新: <span id="lastUpdate">--</span></p>
-        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜、用户排行榜等 | 版本: <strong style="color: #4fc3f7;">1.21.1</strong></p>
+        <p style="margin-top:10px;">拓展版功能：搜索、评论、推荐、详情、捐赠榜、用户排行榜等 | 版本: <strong style="color: #4fc3f7;">1.22.0</strong></p>
         <p style="margin-top:10px;font-size:12px;color:#666;">
             基于 <a href="https://github.com/TSZX-zg/lingstore" target="_blank" style="color:#888;text-decoration:none;">TSZX-zg/lingstore</a> 开源项目拓展开发 · 
             项目仓库: <a href="https://github.com/TSZX-zg/lingstore-plus" target="_blank" style="color:#4fc3f7;text-decoration:none;">lingstore-plus</a>
@@ -1227,13 +1227,17 @@
                         appDetailCache = detailData.apps || {};
                     }
                     
-                    // 尝试获取推荐应用（从缓存数据中筛选）
-                    try {
-                        const recRes = await fetch(`${API_BASE}/apps/recommended`);
-                        const recData = await recRes.json();
-                        recommendedApps = recData.apps || [];
-                    } catch {
-                        // 如果推荐应用获取失败，用下载量前8个代替
+                    // 推荐应用：未登录时用下载量前8名（不请求API），登录后请求官方推荐
+                    if (isLoggedIn()) {
+                        try {
+                            const recRes = await fetch(`${API_BASE}/apps/recommended`);
+                            const recData = await recRes.json();
+                            recommendedApps = recData.apps || [];
+                        } catch {
+                            recommendedApps = [...allApps].sort((a, b) => b.downloads - a.downloads).slice(0, 8);
+                        }
+                    } else {
+                        // 未登录：用下载量前8名代替，不请求API
                         recommendedApps = [...allApps].sort((a, b) => b.downloads - a.downloads).slice(0, 8);
                     }
                     
@@ -1465,6 +1469,108 @@
             const body = document.getElementById('modalBody');
             modal.classList.add('active');
             body.innerHTML = '<div class="loading">加载中...</div>';
+
+            // 未登录：从缓存显示基础信息，不请求API
+            if (!isLoggedIn()) {
+                const app = allApps.find(a => a._id === appId);
+                if (app) {
+                    const cat = categories.find(c => c.name === app.category);
+                    const catName = cat?.displayName || app.category || '未分类';
+                    const sizeMB = ((app.size || 0) / 1024 / 1024).toFixed(2);
+                    
+                    body.innerHTML = `
+                        <!-- 登录提示条 -->
+                        <div style="background: linear-gradient(135deg, rgba(79, 195, 247, 0.15), rgba(79, 195, 247, 0.05)); border: 1px solid rgba(79, 195, 247, 0.3); border-radius: 12px; padding: 15px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: bold; color: #4fc3f7; margin-bottom: 3px;">🔒 登录后查看完整信息</div>
+                                <div style="font-size: 12px; color: #888;">登录后可查看完整详情、用户评论、版本历史并下载应用</div>
+                            </div>
+                            <button onclick="openLoginModal()" style="background: #4fc3f7; color: #1a1a2e; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 13px; font-weight: bold; flex-shrink: 0;">立即登录</button>
+                        </div>
+
+                        <div class="detail-header">
+                            <img class="detail-icon" src="${fixIconUrl(app.iconUrl) || ''}" alt="${app.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23333%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2240%22>APP</text></svg>'">
+                            <div class="detail-info">
+                                <h2>${app.name}</h2>
+                                <div class="developer">${app.developer || '未知开发者'}</div>
+                                <div class="detail-stats">
+                                    <div class="detail-stat">
+                                        <div class="detail-stat-value">${formatNumber(app.downloads || 0)}</div>
+                                        <div class="detail-stat-label">下载</div>
+                                    </div>
+                                    <div class="detail-stat">
+                                        <div class="detail-stat-value">${app.ratingAvg || '5.0'}分</div>
+                                        <div class="detail-stat-label">评分</div>
+                                    </div>
+                                    <div class="detail-stat">
+                                        <div class="detail-stat-value">${app.viewCount || 0}</div>
+                                        <div class="detail-stat-label">查看</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>基本信息</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">包名</div>
+                                    <div class="info-value">${app.packageName || '-'}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">版本</div>
+                                    <div class="info-value">${app.versionName || '-'}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">版本号</div>
+                                    <div class="info-value">${app.versionCode || '-'}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">大小</div>
+                                    <div class="info-value">${sizeMB} MB</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">分类</div>
+                                    <div class="info-value">${catName}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">来源</div>
+                                    <div class="info-value">${app.source || '未知'}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">上传时间</div>
+                                    <div class="info-value">${app.createdAt ? new Date(app.createdAt).toLocaleDateString('zh-CN') : '-'}</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">更新时间</div>
+                                    <div class="info-value">${app.updatedAt ? new Date(app.updatedAt).toLocaleDateString('zh-CN') : '-'}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>应用介绍</h3>
+                            <p style="color:#ccc;line-height:1.6;white-space:pre-wrap;">${app.description || '暂无介绍'}</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>用户评论</h3>
+                            <div class="login-required">
+                                <p>🔒 登录后查看用户评论</p>
+                                <button class="login-required-btn" onclick="openLoginModal()">立即登录</button>
+                            </div>
+                        </div>
+
+                        <!-- 下载按钮 -->
+                        <div id="downloadSection">
+                            <button class="download-btn" onclick="openLoginModal()">
+                                🔒 登录后下载
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+            }
 
             try {
                 const res = await fetch(`${API_BASE}/apps/${appId}`);
@@ -1749,6 +1855,19 @@
             const container = document.getElementById('rankingList');
             const cacheKey = type === 'user-uploads' ? 'uploads' : 'reviews';
             
+            // 未登录：显示登录提示，不请求API
+            if (!isLoggedIn()) {
+                container.innerHTML = `
+                    <div style="text-align:center; padding: 60px 20px;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🔒</div>
+                        <div style="font-size: 18px; margin-bottom: 10px; color: #fff;">登录后查看用户排行榜</div>
+                        <div style="font-size: 14px; color: #888; margin-bottom: 20px;">登录后可查看上传榜、审核榜等更多数据</div>
+                        <button onclick="openLoginModal()" style="background: #4fc3f7; color: #1a1a2e; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold;">立即登录</button>
+                    </div>
+                `;
+                return;
+            }
+            
             // 检查缓存
             if (userRankingCache[cacheKey]) {
                 renderUserRanking(userRankingCache[cacheKey], type);
@@ -1841,8 +1960,22 @@
 
         // 捐赠榜
         async function loadDonations() {
-            if (donations.length > 0) return;
             const container = document.getElementById('donationList');
+            
+            // 未登录：显示登录提示，不请求API
+            if (!isLoggedIn()) {
+                container.innerHTML = `
+                    <div style="text-align:center; padding: 60px 20px;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🔒</div>
+                        <div style="font-size: 18px; margin-bottom: 10px; color: #fff;">登录后查看捐赠榜单</div>
+                        <div style="font-size: 14px; color: #888; margin-bottom: 20px;">登录后可查看所有捐赠者信息</div>
+                        <button onclick="openLoginModal()" style="background: #4fc3f7; color: #1a1a2e; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold;">立即登录</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            if (donations.length > 0) return;
             try {
                 const res = await fetch(`${API_BASE}/donations/leaderboard`);
                 const data = await res.json();
@@ -2367,6 +2500,21 @@
         
         // ========== 应用合集 ==========
         async function loadCollections() {
+            const grid = document.getElementById('collectionsGrid');
+            
+            // 未登录：显示登录提示，不请求API
+            if (!isLoggedIn()) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align:center; padding: 60px 20px;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🔒</div>
+                        <div style="font-size: 18px; margin-bottom: 10px; color: #fff;">登录后查看应用合集</div>
+                        <div style="font-size: 14px; color: #888; margin-bottom: 20px;">登录后可浏览精选应用合集</div>
+                        <button onclick="openLoginModal()" style="background: #4fc3f7; color: #1a1a2e; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer; font-size: 14px; font-weight: bold;">立即登录</button>
+                    </div>
+                `;
+                return;
+            }
+            
             try {
                 const res = await apiFetch('/collections');
                 const data = await res.json();
@@ -2375,7 +2523,7 @@
                     renderCollections();
                 }
             } catch(e) {
-                document.getElementById('collectionsGrid').innerHTML = '<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">❌</div><div class="empty-text">加载失败</div></div>';
+                grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">❌</div><div class="empty-text">加载失败</div></div>';
             }
         }
         
