@@ -22,7 +22,7 @@
     "versionCode": 86,
     "size": 13065861,
     "apkSize": 13065861,
-    "downloads": 64,
+    "downloads": 66,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -59,7 +59,7 @@
     "versionCode": 1026,
     "size": 3704662,
     "apkSize": 3704662,
-    "downloads": 5,
+    "downloads": 6,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -129,7 +129,7 @@
     "versionCode": 100000,
     "size": 3637758,
     "apkSize": 3637758,
-    "downloads": 11,
+    "downloads": 15,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -200,7 +200,7 @@
     "versionCode": 6,
     "size": 4009522,
     "apkSize": 4009522,
-    "downloads": 9,
+    "downloads": 10,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -271,7 +271,7 @@
     "versionCode": 145,
     "size": 12053923,
     "apkSize": 12053923,
-    "downloads": 2,
+    "downloads": 3,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -306,7 +306,7 @@
     "versionCode": 6,
     "size": 2897481,
     "apkSize": 2897481,
-    "downloads": 10,
+    "downloads": 11,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -378,7 +378,7 @@
     "versionCode": 296001002,
     "size": 28986476,
     "apkSize": 28986476,
-    "downloads": 10,
+    "downloads": 11,
     "rating": 1,
     "status": "approved",
     "uploader": {
@@ -438,7 +438,7 @@
     "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/me.bmax.apatch/d4c7b0306966939f-11142.png",
     "category": "System",
     "tags": [],
-    "description": "一个针对安卓设备的新内核级Root解决方案。\nAPM：支持模块，类似Magisk。\nKPM：支持模块，���以让你向内核注入任意代码（提供内核函数内联钩子和系统调用表钩子）。\nAPatch是基于KernelPatch构建的。\nAPatch的界面和APModule的源代码来源于KernelSU，并在此基础上进行了修改。",
+    "description": "一个针对安卓设备的新内核级Root解决方案。\nAPM：支持模块，类似Magisk。\nKPM：支持模块，可以让你向内核注入任意代码（提供内核函数内联钩子和系统调用表钩子）。\nAPatch是基于KernelPatch构建的。\nAPatch的界面和APModule的源代码来源于KernelSU，并在此基础上进行了修改。",
     "developer": "apatch_discuss",
     "source": "github",
     "supportedDevices": [
@@ -486,7 +486,7 @@
     "versionCode": 9,
     "size": 6672850,
     "apkSize": 6672850,
-    "downloads": 211,
+    "downloads": 213,
     "rating": 3.1,
     "status": "approved",
     "uploader": {
@@ -521,7 +521,7 @@
     "versionCode": 20260621,
     "size": 9757196,
     "apkSize": 9757196,
-    "downloads": 497,
+    "downloads": 500,
     "rating": 4.9,
     "status": "approved",
     "uploader": {
@@ -700,7 +700,7 @@
     "versionCode": 35,
     "size": 8008449,
     "apkSize": 8008449,
-    "downloads": 78,
+    "downloads": 80,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -738,7 +738,7 @@
     "versionCode": 388,
     "size": 7266969,
     "apkSize": 7266969,
-    "downloads": 81,
+    "downloads": 82,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -772,7 +772,7 @@
     "versionCode": 921,
     "size": 33202060,
     "apkSize": 33202060,
-    "downloads": 60,
+    "downloads": 61,
     "rating": 4.5,
     "status": "approved",
     "uploader": {
@@ -879,7 +879,7 @@
     "versionCode": 2465,
     "size": 48656595,
     "apkSize": 48656595,
-    "downloads": 61,
+    "downloads": 62,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -986,7 +986,7 @@
     "versionCode": 2,
     "size": 3205377,
     "apkSize": 3205377,
-    "downloads": 31,
+    "downloads": 32,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -1089,7 +1089,7 @@
     "versionCode": 43,
     "size": 5273260,
     "apkSize": 5273260,
-    "downloads": 55,
+    "downloads": 56,
     "rating": 1,
     "status": "approved",
     "uploader": {
@@ -1124,7 +1124,7 @@
     "versionCode": 44,
     "size": 2775228,
     "apkSize": 2775228,
-    "downloads": 18,
+    "downloads": 19,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -1328,7 +1328,7 @@
     "versionCode": 8954610,
     "size": 17880751,
     "apkSize": 17880751,
-    "downloads": 41,
+    "downloads": 42,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -2046,7 +2046,7 @@
     "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.bug.xposed/564fa31ca263f4fd-82.png",
     "category": "System",
     "tags": [],
-    "description": "应用转生App是一款专为安卓用户打造的虚拟框架工具，支持在无需Root权限和解锁Bootloader的情况下加载多种xposed模块，为用户提供更加便捷的系统扩展与应用增强体验。软件兼容市面上众多常用模块及框架，拥有较高的模块适配性和稳定性，可满足应用增强、功能扩展以及个性化定制等多种需求。\n\n应用转生App还内���应用双开与多开功能，支持防检测机制，帮助用户轻松实现多个账号同时运行。凭借简洁易用的操作方式、优秀的兼容表现以及开放灵活的使用环境，应用转生成为众多安卓玩机爱好者进行应用管理、模块加载和多开操作的实用工具。",
+    "description": "应用转生App是一款专为安卓用户打造的虚拟框架工具，支持在无需Root权限和解锁Bootloader的情况下加载多种xposed模块，为用户提供更加便捷的系统扩展与应用增强体验。软件兼容市面上众多常用模块及框架，拥有较高的模块适配性和稳定性，可满足应用增强、功能扩展以及个性化定制等多种需求。\n\n应用转生App还内置应用双开与多开功能，支持防检测机制，帮助用户轻松实现多个账号同时运行。凭借简洁易用的操作方式、优秀的兼容表现以及开放灵活的使用环境，应用转生成为众多安卓玩机爱好者进行应用管理、模块加载和多开操作的实用工具。",
     "supportedDevices": [
       "phone"
     ],
@@ -2599,7 +2599,7 @@
     "versionCode": 1,
     "size": 48052168,
     "apkSize": 48052168,
-    "downloads": 24,
+    "downloads": 25,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -2961,7 +2961,7 @@
     "versionCode": 1130,
     "size": 40911802,
     "apkSize": 40911802,
-    "downloads": 137,
+    "downloads": 138,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -3108,7 +3108,7 @@
     "versionCode": 898,
     "size": 12525072,
     "apkSize": 12525072,
-    "downloads": 55,
+    "downloads": 56,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -4150,7 +4150,7 @@
     "versionCode": 3600,
     "size": 6959191,
     "apkSize": 6959191,
-    "downloads": 369,
+    "downloads": 370,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -4402,7 +4402,7 @@
     "versionCode": 9,
     "size": 154091774,
     "apkSize": 154091774,
-    "downloads": 172,
+    "downloads": 173,
     "rating": 4.7,
     "status": "approved",
     "uploader": {
@@ -5132,7 +5132,7 @@
     "versionCode": 128,
     "size": 3672933,
     "apkSize": 3672933,
-    "downloads": 54,
+    "downloads": 55,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -5753,7 +5753,7 @@
     "versionCode": 9133,
     "size": 24158684,
     "apkSize": 24158684,
-    "downloads": 77,
+    "downloads": 79,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -6357,7 +6357,7 @@
     "versionCode": 332,
     "size": 1291655,
     "apkSize": 1291655,
-    "downloads": 35,
+    "downloads": 36,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -6565,7 +6565,7 @@
     "versionCode": 4,
     "size": 6395953,
     "apkSize": 6395953,
-    "downloads": 88,
+    "downloads": 89,
     "rating": 2.7,
     "status": "approved",
     "uploader": {
@@ -7055,7 +7055,7 @@
     "versionCode": 151300,
     "size": 9655202,
     "apkSize": 9655202,
-    "downloads": 37,
+    "downloads": 38,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -7090,7 +7090,7 @@
     "versionCode": 841,
     "size": 2284258,
     "apkSize": 2284258,
-    "downloads": 126,
+    "downloads": 127,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -7160,7 +7160,7 @@
     "versionCode": 20260410,
     "size": 2608127,
     "apkSize": 2608127,
-    "downloads": 182,
+    "downloads": 183,
     "rating": 4.6,
     "status": "approved",
     "uploader": {
@@ -9044,7 +9044,7 @@
     "versionCode": 2,
     "size": 25553983,
     "apkSize": 25553983,
-    "downloads": 77,
+    "downloads": 78,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -10200,7 +10200,7 @@
     "versionCode": 8,
     "size": 3484436,
     "apkSize": 3484436,
-    "downloads": 112,
+    "downloads": 113,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -10234,7 +10234,7 @@
     "versionCode": 1710201,
     "size": 9394449,
     "apkSize": 9394449,
-    "downloads": 266,
+    "downloads": 267,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -10553,7 +10553,7 @@
     "versionCode": 27,
     "size": 42822243,
     "apkSize": 42822243,
-    "downloads": 303,
+    "downloads": 304,
     "rating": 4.2,
     "status": "approved",
     "uploader": {
@@ -10658,7 +10658,7 @@
     "versionCode": 6000104,
     "size": 30902329,
     "apkSize": 30902329,
-    "downloads": 95,
+    "downloads": 96,
     "rating": 4,
     "status": "approved",
     "uploader": {
@@ -10908,7 +10908,7 @@
     "versionCode": 43,
     "size": 7813914,
     "apkSize": 7813914,
-    "downloads": 194,
+    "downloads": 195,
     "rating": 4.4,
     "status": "approved",
     "uploader": {
@@ -11011,7 +11011,7 @@
     "versionCode": 20653,
     "size": 6824068,
     "apkSize": 6824068,
-    "downloads": 100,
+    "downloads": 101,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -11149,7 +11149,7 @@
     "versionCode": 178,
     "size": 9815212,
     "apkSize": 9815212,
-    "downloads": 81,
+    "downloads": 82,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -11680,7 +11680,7 @@
     "versionCode": 1177630,
     "size": 58212589,
     "apkSize": 58212589,
-    "downloads": 51,
+    "downloads": 52,
     "rating": 2,
     "status": "approved",
     "uploader": {
@@ -11757,7 +11757,7 @@
     "versionCode": 1,
     "size": 1782070,
     "apkSize": 1782070,
-    "downloads": 187,
+    "downloads": 188,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -12545,7 +12545,7 @@
     "versionCode": 9901504,
     "size": 19621521,
     "apkSize": 19621521,
-    "downloads": 657,
+    "downloads": 659,
     "rating": 4.8,
     "status": "approved",
     "uploader": {
@@ -13311,7 +13311,7 @@
     "versionCode": 3000,
     "size": 5557417,
     "apkSize": 5557417,
-    "downloads": 155,
+    "downloads": 156,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -13870,7 +13870,7 @@
     "versionCode": 191,
     "size": 9379050,
     "apkSize": 9379050,
-    "downloads": 53,
+    "downloads": 55,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -14043,8 +14043,8 @@
     "versionCode": 304,
     "size": 5342053,
     "apkSize": 5342053,
-    "downloads": 49,
-    "rating": 5,
+    "downloads": 50,
+    "rating": 4.5,
     "status": "approved",
     "uploader": {
       "_id": "69d66cd825674e3066735666",
@@ -14054,7 +14054,7 @@
       "avatarUrl": null
     },
     "createdAt": "2026-05-12T07:22:55.895Z",
-    "updatedAt": "2026-05-13T00:50:32.577Z"
+    "updatedAt": "2026-06-27T18:19:55.807Z"
   },
   {
     "_id": "6a02d3c3764a5273e6d030e6",
@@ -15020,7 +15020,7 @@
     "versionCode": 430,
     "size": 100336061,
     "apkSize": 100336061,
-    "downloads": 175,
+    "downloads": 176,
     "rating": 4.4,
     "status": "approved",
     "uploader": {
@@ -15753,7 +15753,7 @@
     "versionCode": 16213,
     "size": 12477192,
     "apkSize": 12477192,
-    "downloads": 172,
+    "downloads": 173,
     "rating": 4,
     "status": "approved",
     "uploader": {
@@ -16563,7 +16563,7 @@
     "versionCode": 260426,
     "size": 2868284,
     "apkSize": 2868284,
-    "downloads": 52,
+    "downloads": 53,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -16845,7 +16845,7 @@
     "versionCode": 4000,
     "size": 3577222,
     "apkSize": 3577222,
-    "downloads": 255,
+    "downloads": 256,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -17024,7 +17024,7 @@
     "versionCode": 404413800,
     "size": 48667070,
     "apkSize": 48667070,
-    "downloads": 178,
+    "downloads": 179,
     "rating": 4.3,
     "status": "approved",
     "uploader": {
@@ -17156,7 +17156,7 @@
     "logoUrl": "https://market.ziling.xin/download/icon/apk-logos-v2/com.bandbbs.ebook.plus/1a497e5094f4686d-126401.png",
     "category": "news",
     "tags": [],
-    "description": "弦电子书同步器\n\n打通手机与手环的阅读桥梁。通过手机端将电子书一键推送到手环设备，支持阅读进度同步。\n\n核心功能：一键同步（手机选书，手环即读）；进度同步（手机与手环阅读进度互通）；格式全面（支持 TXT、EPUB、MOBI、NVB、DOC、DOCX、PDF 等）；智能适配（文本自动适配手环屏幕）。\n\n首次使用建议查看聪明猫的详细安装教程，包含设备连接和问题解决指引：\nhttps://www.bandbbs.cn/threads/11261/\n\n风险提示：手机端遵循 AGPL 开源协议，完全免费。任何使用手机端源码的行为都必须开源。如发现收费倒卖或私自修改后倒卖，请立即举报。\n\n\n弦电子书同步器使用说明\n\n一、准���工作\n\n1. 使用“表盘自定义工具”或“AstroBox”将.rpk结尾的小程序文件安装到手环上（如果不会操作可以问问别人，不要来问开发者）。\n2. 将.apk结尾的同步器安装包安装到手机上（安装包解析失败说明手机安卓版本太老了）。\n3. 打开“小米运动健康”，保证它始终在中后台运行，且成功连接手环后，再打开“弦-电子书同步器”。\n\n二、导入书籍到手机端\n\n1. 打开软件，点击右上角的“+”号。\n2. 选择要导入的书籍文档（支持TXT、EPUB、MOBI、NVB等格式），勾选后点击。\n3. 确认书籍信息（书名、作者等），点击右上角的“导入”。\n4. 等待文件读取和处理完成。\n5. 导入成功后，书籍会出现在首页的书籍列表中，就可以进行查看了。\n\n三、同步到手环\n\n1. 确保手环已成功连接手机。\n2. 在手机端书籍列表中，选择想要同步的书籍，点击同步选项。\n3. 同步器会自动将书籍内容分段压缩并传输到手环。\n4. 传输过程中，请保持手环与手机连接稳定。\n5. 传输完成后，打开手环上的弦电子书小程序即可开始阅读。\n\n四、必读提醒（以下内容不读还过来问的话，开发者会让你飞起来）\n\n1. 禁止使用弦电子书的同步器连接喵喵电子书，也禁止使用喵喵电子书的同步器连接弦电子书。\n2. 安装小程序后第一次同步书籍会报错“file already exist”，属于正常情况，第二次同步即可正常传输。\n3. 如果书籍无法同步，报错“No chapter data”，请同时在手机端和手环端删除这本书，然后重新导入并同步。\n4. 出现无法连接手环的问题，请检查“小米运动健康”是否在后台运行、是否开启了“允许后台运行”，再检查手环上有没有安装小程序。\n5. 一直提示连不上手环，请在“小米运动健康”→我的→设备授权管理中查看“电子书”的权限是否全部打开。注意点进“电子书”后，需要显示的是“弦电子书 - 同步器”才是本小程序的。\n6. 小米手环会预留一部分空间用于系统更新，因此“米环管理”显示的剩余空间不等于你能放电子书的空间。你有空间不代表你能传输，提示空间不足就是空间不足。\n7. 由于小米Vela系统的固件问题，文件相关接口调用多了会死机，因此传输过程中手环自动重启、或使用过程中手环自动重启属于正常现象。\n8. 如果怎么试都连不上手环，可以尝试将手环恢复出厂设置。\n9. 下载同步器请前往官方提供的网盘地址（具体链接以发布页为准）。\n\n\n\n以上内容由AI抓取官方相关网页后生成\n\n\n注：为什么灵应用商店不能让我上传rpk文件（恼",
+    "description": "弦电子书同步器\n\n打通手机与手环的阅读桥梁。通过手机端将电子书一键推送到手环设备，支持阅读进度同步。\n\n核心功能：一键同步（手机选书，手环即读）；进度同步（手机与手环阅读进度互通）；格式全面（支持 TXT、EPUB、MOBI、NVB、DOC、DOCX、PDF 等）；智能适配（文本自动适配手环屏幕）。\n\n首次使用建议查看聪明猫的详细安装教程，包含设备连接和问题解决指引：\nhttps://www.bandbbs.cn/threads/11261/\n\n风险提示：手机端遵循 AGPL 开源协议，完全免费。任何使用手机端源码的行为都必须开源。如发现收费倒卖或私自修改后倒卖，请立即举报。\n\n\n弦电子书同步器使用说明\n\n一、��备工作\n\n1. 使用“表盘自定义工具”或“AstroBox”将.rpk结尾的小程序文件安装到手环上（如果不会操作可以问问别人，不要来问开发者）。\n2. 将.apk结尾的同步器安装包安装到手机上（安装包解析失败说明手机安卓版本太老了）。\n3. 打开“小米运动健康”，保证它始终在中后台运行，且成功连接手环后，再打开“弦-电子书同步器”。\n\n二、导入书籍到手机端\n\n1. 打开软件，点击右上角的“+”号。\n2. 选择要导入的书籍文档（支持TXT、EPUB、MOBI、NVB等格式），勾选后点击。\n3. 确认书籍信息（书名、作者等），点击右上角的“导入”。\n4. 等待文件读取和处理完成。\n5. 导入成功后，书籍会出现在首页的书籍列表中，就可以进行查看了。\n\n三、同步到手环\n\n1. 确保手环已成功连接手机。\n2. 在手机端书籍列表中，选择想要同步的书籍，点击同步选项。\n3. 同步器会自动将书籍内容分段压缩并传输到手环。\n4. 传输过程中，请保持手环与手机连接稳定。\n5. 传输完成后，打开手环上的弦电子书小程序即可开始阅读。\n\n四、必读提醒（以下内容不读还过来问的话，开发者会让你飞起来）\n\n1. 禁止使用弦电子书的同步器连接喵喵电子书，也禁止使用喵喵电子书的同步器连接弦电子书。\n2. 安装小程序后第一次同步书籍会报错“file already exist”，属于正常情况，第二次同步即可正常传输。\n3. 如果书籍无法同步，报错“No chapter data”，请同时在手机端和手环端删除这本书，然后重新导入并同步。\n4. 出现无法连接手环的问题，请检查“小米运动健康”是否在后台运行、是否开启了“允许后台运行”，再检查手环上有没有安装小程序。\n5. 一直提示连不上手环，请在“小米运动健康”→我的→设备授权管理中查看“电子书”的权限是否全部打开。注意点进“电子书”后，需要显示的是“弦电子书 - 同步器”才是本小程序的。\n6. 小米手环会预留一部分空间用于系统更新，因此“米环管理”显示的剩余空间不等于你能放电子书的空间。你有空间不代表你能传输，提示空间不足就是空间不足。\n7. 由于小米Vela系统的固件问题，文件相关接口调用多了会死机，因此传输过程中手环自动重启、或使用过程中手环自动重启属于正常现象。\n8. 如果怎么试都连不上手环，可以尝试将手环恢复出厂设置。\n9. 下载同步器请前往官方提供的网盘地址（具体链接以发布页为准）。\n\n\n\n以上内容由AI抓取官方相关网页后生成\n\n\n注：为什么灵应用商店不能让我上传rpk文件（恼",
     "developer": "@爅峫moye",
     "source": "vb.luoxe.cn",
     "supportedDevices": [
@@ -17457,7 +17457,7 @@
     "versionCode": 200,
     "size": 4716253,
     "apkSize": 4716253,
-    "downloads": 62,
+    "downloads": 63,
     "rating": 3,
     "status": "approved",
     "uploader": {
@@ -17492,7 +17492,7 @@
     "versionCode": 2262,
     "size": 34362738,
     "apkSize": 34362738,
-    "downloads": 56,
+    "downloads": 58,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -17918,7 +17918,7 @@
     "versionCode": 1001000,
     "size": 6352400,
     "apkSize": 6352400,
-    "downloads": 86,
+    "downloads": 87,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -17989,7 +17989,7 @@
     "versionCode": 117,
     "size": 35688582,
     "apkSize": 35688582,
-    "downloads": 170,
+    "downloads": 171,
     "rating": 4.4,
     "status": "approved",
     "uploader": {
@@ -18414,7 +18414,7 @@
     "versionCode": 1,
     "size": 3474184,
     "apkSize": 3474184,
-    "downloads": 48,
+    "downloads": 49,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -19584,7 +19584,7 @@
     "versionCode": 1,
     "size": 384343,
     "apkSize": 384343,
-    "downloads": 24,
+    "downloads": 25,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -20826,7 +20826,7 @@
     "versionCode": 22,
     "size": 49764903,
     "apkSize": 49764903,
-    "downloads": 36,
+    "downloads": 38,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -21921,7 +21921,7 @@
     "versionCode": 4002216,
     "size": 20004379,
     "apkSize": 20004379,
-    "downloads": 20,
+    "downloads": 21,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -22419,7 +22419,7 @@
     "versionCode": 8448,
     "size": 22621597,
     "apkSize": 22621597,
-    "downloads": 98,
+    "downloads": 99,
     "rating": 4.3,
     "status": "approved",
     "uploader": {
@@ -22563,7 +22563,7 @@
     "versionCode": 220603021,
     "size": 4393950,
     "apkSize": 4393950,
-    "downloads": 103,
+    "downloads": 104,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -23664,7 +23664,7 @@
     "versionCode": 2260,
     "size": 238361603,
     "apkSize": 238361603,
-    "downloads": 315,
+    "downloads": 316,
     "rating": 3.6,
     "status": "approved",
     "uploader": {
@@ -24143,7 +24143,7 @@
     "versionCode": 8,
     "size": 2447628,
     "apkSize": 2447628,
-    "downloads": 9,
+    "downloads": 10,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -24851,7 +24851,7 @@
     "versionCode": 9,
     "size": 167007,
     "apkSize": 167007,
-    "downloads": 191,
+    "downloads": 192,
     "rating": 5,
     "status": "approved",
     "uploader": {
@@ -25103,7 +25103,7 @@
     "versionCode": 119,
     "size": 12280726,
     "apkSize": 12280726,
-    "downloads": 110,
+    "downloads": 111,
     "rating": 3.5,
     "status": "approved",
     "uploader": {
@@ -25797,7 +25797,7 @@
     "versionCode": 920260406,
     "size": 7553944,
     "apkSize": 7553944,
-    "downloads": 32,
+    "downloads": 33,
     "rating": 3,
     "status": "approved",
     "uploader": {
@@ -26019,7 +26019,7 @@
     "versionCode": 250819,
     "size": 3905946,
     "apkSize": 3905946,
-    "downloads": 73,
+    "downloads": 74,
     "rating": 0,
     "status": "approved",
     "uploader": {
@@ -26345,7 +26345,7 @@
     "versionCode": 2465,
     "size": 39964748,
     "apkSize": 39964748,
-    "downloads": 817,
+    "downloads": 818,
     "rating": 3.6,
     "status": "approved",
     "uploader": {
